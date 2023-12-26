@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setUser } from "../actions/authActions";
 import { fetchFoodItems } from "../actions/foodAction";
+import { clearCart } from "../actions/cartActions";
 
 const Food_Products = () => {
   const dispatch = useDispatch();
@@ -30,6 +31,8 @@ const Food_Products = () => {
     localStorage.removeItem("emailText");
     localStorage.removeItem("passwordText");
     dispatch(setUser(null));
+    dispatch(clearCart());
+
     alert("You Are Successfully Logged Out");
     navigate("/");
   };

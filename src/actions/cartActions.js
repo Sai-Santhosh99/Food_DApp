@@ -25,3 +25,7 @@ export const decrementItem = (itemId) => {
     payload: itemId,
   };
 };
+
+export const clearCart = () => ({
+  type: "CLEAR_CART",
+});
